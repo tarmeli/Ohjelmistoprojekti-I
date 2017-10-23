@@ -23,4 +23,6 @@ dist/
 nbdist/
 .nb-gradle/
 
+### Projektin tiedostot ###
 dbconnection.properties
+.DS_Store
