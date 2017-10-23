@@ -1,0 +1,12 @@
+{
+  "kyselyt": [{
+    "kysely1": {
+      "nimi": "kysely1",
+      "kysymykset": ["kysymys1", "kysymys2"]
+    },
+    "kysely2": {
+      "nimi": "kysely2",
+      "kysymykset": ["kysymys1", "kysymys2"]
+    }
+  }]
+}
