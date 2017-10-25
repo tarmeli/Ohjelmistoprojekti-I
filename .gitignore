@@ -15,6 +15,21 @@ target/
 *.iml
 *.ipr
 
+### Eclipse ###
+*.pydevproject
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+
+
 ### NetBeans ###
 nbproject/private/
 build/
