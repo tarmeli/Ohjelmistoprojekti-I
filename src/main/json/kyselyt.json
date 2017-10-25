@@ -11,4 +11,4 @@
   }]
 }
 
-kyselyt.kysely1.kysymykset[0] == "kysely1 kysymys1"
+kyselyt[0].kysymykset[0] == "kysely1 kysymys1"
