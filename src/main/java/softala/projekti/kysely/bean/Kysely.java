@@ -1,15 +1,23 @@
-package softala.projekti.bean;
+package softala.projekti.kysely.bean;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Kysely {
+
+    @Id
     private int id;
     private String nimi;
     private String kysymys;
 
-    public Kysely() {
+    public Kysely(int id, String nimi, String kysymys) {
         this.id = id;
         this.nimi = nimi;
         this.kysymys = kysymys;
     }
+
+    public Kysely() {}
 
     public int getId() {
         return id;
