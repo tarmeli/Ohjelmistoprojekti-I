@@ -2,11 +2,13 @@
   "kyselyt": [{
     "kysely1": {
       "nimi": "kysely1",
-      "kysymykset": ["kysymys1", "kysymys2"]
+      "kysymykset": ["kysely1 kysymys1", "kysely1 kysymys2"]
     },
     "kysely2": {
       "nimi": "kysely2",
-      "kysymykset": ["kysymys1", "kysymys2"]
+      "kysymykset": ["kysely2 kysymys1", "kysely2 kysymys2"]
     }
   }]
 }
+
+kyselyt.kysely1.kysymykset[0] == "kysely1 kysymys1"
