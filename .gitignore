@@ -39,4 +39,5 @@ nbdist/
 .nb-gradle/
 
 ### Projektin tiedostot ###
+application.properties
 .DS_Store
