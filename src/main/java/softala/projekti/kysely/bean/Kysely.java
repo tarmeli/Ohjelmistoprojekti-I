@@ -2,6 +2,8 @@ package softala.projekti.kysely.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 public class Kysely {
@@ -9,12 +11,13 @@ public class Kysely {
     @Id
     private int id;
     private String nimi;
-    private String kysymys;
+    @OneToMany(targetEntity = Kysymys.class)
+    private List<Kysymys> kysymykset;
 
-    public Kysely(int id, String nimi, String kysymys) {
+    public Kysely(int id, String nimi, List<Kysymys> kysymykset) {
         this.id = id;
         this.nimi = nimi;
-        this.kysymys = kysymys;
+        this.kysymykset = kysymykset;
     }
 
     public Kysely() {}
@@ -35,11 +38,11 @@ public class Kysely {
         this.nimi = nimi;
     }
 
-    public String getKysymys() {
-        return kysymys;
+    public List<Kysymys> getKysymykset() {
+        return kysymykset;
     }
 
-    public void setKysymys(String kysymys) {
-        this.kysymys = kysymys;
+    public void setKysymys(List<Kysymys> kysymykset) {
+        this.kysymykset = kysymykset;
     }
 }

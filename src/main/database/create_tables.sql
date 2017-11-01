@@ -14,9 +14,9 @@ CREATE TABLE kysymys (
   DEFAULT CHARSET = utf8;
 
 CREATE TABLE kysely (
-  id         INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  kysely_id  INTEGER NOT NULL REFERENCES kyselyt (id) PRIMARY KEY,
-  kysymys_id INTEGER NOT NULL REFERENCES kysymys (id) PRIMARY KEY
+  kysely_id  INTEGER NOT NULL REFERENCES kyselyt (id),
+  kysymys_id INTEGER NOT NULL REFERENCES kysymys (id),
+  PRIMARY KEY(kysely_id, kysymys_id)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
