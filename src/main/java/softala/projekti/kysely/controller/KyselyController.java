@@ -21,24 +21,9 @@ public class KyselyController {
     private KyselyRepository kyselyRepository;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<Kysely>haeKaikki() {
-        Kysely kysely = new Kysely();
-        List<Kysymys> kysymykset = new ArrayList<Kysymys>();
-        kysely.setId(1);
-        kysely.setNimi("Testikysely");
-        Kysymys kysymys = new Kysymys();
-        kysymys.setId(1);
-        kysymys.setTyyppi("monivalinta");
-        kysymys.setTeksti("Mitä kuuluu Marja-Leena?");
-        kysymykset.add(kysymys);
-        Kysymys kysymys2 = new Kysymys();
-        kysymys2.setId(2);
-        kysymys2.setTyyppi("textarea");
-        kysymys2.setTeksti("Ainii hä olih Hommi?");
-        kysymykset.add(kysymys2);
-        kysely.setKysymys(kysymykset);
+    public List<Kysely>haeKaikki() {
+        return kyselyRepository.findAll();
 
-        return new ResponseEntity<>(kysely, HttpStatus.OK);
     }
 
 

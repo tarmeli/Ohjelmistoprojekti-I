@@ -1,9 +1,6 @@
-INSERT INTO kyselyt (nimi)
-VALUES
-('Testikysely');
+INSERT INTO kysely VALUES
+(1, 'Testikysely');
 
-INSERT INTO kysymys (kysymys, tyyppi)
-VALUES
-('Mitä kuuluu Marja-Leena?', 'textarea');
-
-INSERT INTO kysely VALUES (1, 1);
+INSERT INTO kysymys VALUES
+(1, 1, 'Mitä kuuluu Marja-Leena?', 'textarea'),
+(2, 1, 'Sumpille?', 'radio');

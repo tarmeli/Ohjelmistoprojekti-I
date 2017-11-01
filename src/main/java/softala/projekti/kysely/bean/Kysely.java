@@ -1,17 +1,21 @@
 package softala.projekti.kysely.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "kysely")
 public class Kysely {
 
     @Id
+    @Column(name = "kysely_id")
     private int id;
     private String nimi;
-    @OneToMany(targetEntity = Kysymys.class)
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "kysely")
+    @JsonManagedReference
     private List<Kysymys> kysymykset;
 
     public Kysely(int id, String nimi, List<Kysymys> kysymykset) {
@@ -20,7 +24,8 @@ public class Kysely {
         this.kysymykset = kysymykset;
     }
 
-    public Kysely() {}
+    public Kysely() {
+    }
 
     public int getId() {
         return id;

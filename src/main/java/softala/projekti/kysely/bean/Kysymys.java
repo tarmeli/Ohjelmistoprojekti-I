@@ -1,23 +1,33 @@
 package softala.projekti.kysely.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import javax.persistence.*;
 
 @Entity
+@Table(name = "kysymys")
 public class Kysymys {
     @Id
     private int id;
     private String tyyppi;
+
+    @Column(name = "kysymys")
     private String teksti;
 
+    @ManyToOne
+    @JoinColumn(name = "kysely_id")
+    @JsonBackReference
+    private Kysely kysely;
 
-    public Kysymys(int id, String tyyppi, String teksti) {
+
+    public Kysymys(String teksti) {
         this.id = id;
         this.tyyppi = tyyppi;
         this.teksti = teksti;
     }
 
-    public Kysymys() {}
+    public Kysymys() {
+    }
 
     public int getId() {
         return id;
@@ -43,8 +53,12 @@ public class Kysymys {
         this.teksti = teksti;
     }
 
-    @Override
-    public String toString() {
-        return this.getTeksti();
+    public Kysely getKysely() {
+        return kysely;
     }
+
+    public void setKysely(Kysely kysely) {
+        this.kysely = kysely;
+    }
+
 }
