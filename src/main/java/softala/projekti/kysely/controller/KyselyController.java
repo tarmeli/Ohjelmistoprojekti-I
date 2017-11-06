@@ -1,6 +1,7 @@
 package softala.projekti.kysely.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import softala.projekti.kysely.repository.KyselyRepository;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:8080")
 @RequestMapping(path="/kyselyt")
 public class KyselyController {
 
