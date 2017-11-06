@@ -11,7 +11,7 @@ import softala.projekti.kysely.repository.KyselyRepository;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin
 @RequestMapping(path="/kyselyt")
 public class KyselyController {
 
