@@ -16,7 +16,6 @@ import softala.projekti.kysely.repository.KyselyRepository;
 		classes = KyselyApplication.class
 )
 @AutoConfigureMockMvc
-@TestPropertySource
 @TestPropertySource(
 		locations = "classpath:application-integrationtest.properties"
 )
@@ -31,6 +30,7 @@ public class KyselyApplicationTests {
 
 	@Test
 	public void contextLoads() {
+
 	}
 
 }
