@@ -1,9 +1,9 @@
 package softala.projekti.kysely.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.*;
 import softala.projekti.kysely.bean.Kysely;
 import softala.projekti.kysely.repository.KyselyRepository;
 
@@ -22,10 +22,8 @@ public class KyselyController {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
-    public Kysely haeId() {
-        return kyselyRepository.findOne(1);
+    public Kysely haeId(@PathVariable int id) {
+        return kyselyRepository.findOne(id);
     }
-
-
 
 }
