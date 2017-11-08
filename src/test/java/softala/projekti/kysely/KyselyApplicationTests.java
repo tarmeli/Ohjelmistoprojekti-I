@@ -29,10 +29,13 @@ public class KyselyApplicationTests {
 	private KyselyRepository repository;
 
 	@Test
-	public void kyselyTesti()
+	public void kyselytTesti()
 		throws Exception{
 
-		
+	}
+
+	@Test
+	public void contextLoads() {
 
 	}
 
