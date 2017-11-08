@@ -10,7 +10,7 @@ CREATE TABLE kysymys (
   kysely_id INTEGER      NOT NULL REFERENCES kysely (kysely_id),
   kysymys   VARCHAR(500) NOT NULL,
   tyyppi    VARCHAR(100),
-  maara     INTEGER
+  tyypin_maara     INTEGER
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
