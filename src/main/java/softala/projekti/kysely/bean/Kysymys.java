@@ -10,7 +10,7 @@ public class Kysymys {
     @Id
     private int id;
     private String tyyppi;
-
+    @Column(name = "tyypin_maara")
     private int maara;
 
     @Column(name = "kysymys")
