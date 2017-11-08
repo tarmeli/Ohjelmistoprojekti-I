@@ -6,10 +6,11 @@ CREATE TABLE kysely (
   DEFAULT CHARSET = utf8;
 
 CREATE TABLE kysymys (
-  id INTEGER      NOT NULL  PRIMARY KEY,
-  kysely_id INTEGER NOT NULL REFERENCES kysely(kysely_id),
-  kysymys    VARCHAR(500) NOT NULL,
-  tyyppi     VARCHAR(100)
+  id        INTEGER      NOT NULL  PRIMARY KEY,
+  kysely_id INTEGER      NOT NULL REFERENCES kysely (kysely_id),
+  kysymys   VARCHAR(500) NOT NULL,
+  tyyppi    VARCHAR(100),
+  maara     INTEGER
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;

@@ -11,6 +11,8 @@ public class Kysymys {
     private int id;
     private String tyyppi;
 
+    private int maara;
+
     @Column(name = "kysymys")
     private String teksti;
 
@@ -24,6 +26,7 @@ public class Kysymys {
         this.id = id;
         this.tyyppi = tyyppi;
         this.teksti = teksti;
+        this.maara = maara;
     }
 
     public Kysymys() {
@@ -59,6 +62,14 @@ public class Kysymys {
 
     public void setKysely(Kysely kysely) {
         this.kysely = kysely;
+    }
+
+    public int getMaara() {
+        return maara;
+    }
+
+    public void setMaara(int maara) {
+        this.maara = maara;
     }
 
 }
