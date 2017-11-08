@@ -20,6 +20,7 @@ import softala.projekti.kysely.repository.KyselyRepository;
 		locations = "classpath:application-integrationtest.properties"
 )
 
+//testit tulee tähän
 public class KyselyApplicationTests {
 
 	@Autowired
