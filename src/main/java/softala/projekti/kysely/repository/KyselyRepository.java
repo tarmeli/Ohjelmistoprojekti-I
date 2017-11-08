@@ -9,4 +9,6 @@ import softala.projekti.kysely.bean.Kysely;
 @Repository
 public interface KyselyRepository extends JpaRepository<Kysely, Integer> {
 
+
+
 }

@@ -9,12 +9,13 @@ import javax.persistence.*;
 public class Kysymys {
     @Id
     private int id;
-    private String tyyppi;
-    @Column(name = "tyypin_maara")
-    private int maara;
 
     @Column(name = "kysymys")
     private String teksti;
+
+    private String tyyppi;
+
+    private int tyypin_maara;
 
     @ManyToOne
     @JoinColumn(name = "kysely_id")
@@ -22,11 +23,11 @@ public class Kysymys {
     private Kysely kysely;
 
 
-    public Kysymys(String teksti) {
+    public Kysymys(int id, String teksti, String tyyppi, int tyypin_maara) {
         this.id = id;
-        this.tyyppi = tyyppi;
         this.teksti = teksti;
-        this.maara = maara;
+        this.tyyppi = tyyppi;
+        this.tyypin_maara = tyypin_maara;
     }
 
     public Kysymys() {
@@ -64,12 +65,11 @@ public class Kysymys {
         this.kysely = kysely;
     }
 
-    public int getMaara() {
-        return maara;
+    public int getTyypin_maara() {
+        return tyypin_maara;
     }
 
-    public void setMaara(int maara) {
-        this.maara = maara;
+    public void setTyypin_maara(int tyypin_maara) {
+        this.tyypin_maara = tyypin_maara;
     }
-
 }
