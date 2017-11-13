@@ -4,19 +4,22 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 
+// tehdään Kysymys-luokasta JPA entity
 @Entity
 @Table(name = "kysymys")
 public class Kysymys {
     @Id
     private int id;
 
-    @Column(name = "kysymys")
+    @Column(name = "kysymys") // attribuutti eri nimellä tietokannassa
     private String teksti;
 
     private String tyyppi;
 
+    // esim. radio-buttonien ja checkboxien määrä
     private int tyypin_maara;
 
+    // yhdistetään kysymykset kysely-tauluun
     @ManyToOne
     @JoinColumn(name = "kysely_id")
     @JsonBackReference

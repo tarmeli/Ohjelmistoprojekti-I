@@ -5,15 +5,17 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.*;
 import java.util.List;
 
+// tehdään Kysely-luokasta JPA entity ja kerrotaan, mitä taulua luokka vastaa tietokannassa
 @Entity
 @Table(name = "kysely")
 public class Kysely {
 
     @Id
-    @Column(name = "kysely_id")
+    @Column(name = "kysely_id") // @Column tarvitaan, jos attribuutin nimi ei vastaa kannassa olevaa nimeä
     private int id;
     private String nimi;
 
+    // annotaatio, jolla yhdistetään kysely-taulu kysymys-tauluun -> saadaan kyselyn kysymykset listana
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "kysely")
     @JsonManagedReference
     private List<Kysymys> kysymykset;

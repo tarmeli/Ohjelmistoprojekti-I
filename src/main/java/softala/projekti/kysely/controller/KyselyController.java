@@ -11,14 +11,17 @@ import java.util.List;
 @RequestMapping(path="/kyselyt")
 public class KyselyController {
 
+    // repositoryn injektointi
     @Autowired
     private KyselyRepository kyselyRepository;
 
+    // kaikki kyselyt json-muodossa
     @RequestMapping(method = RequestMethod.GET)
     public List<Kysely>haeKaikki() {
         return kyselyRepository.findAll();
     }
 
+    // kyselyn haku id:llä
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     public Kysely haeId(@PathVariable int id) {
         return kyselyRepository.findOne(id);
