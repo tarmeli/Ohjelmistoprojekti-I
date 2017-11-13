@@ -41,3 +41,4 @@ nbdist/
 ### Projektin tiedostot ###
 application.properties
 .DS_Store
+.travis.yml
