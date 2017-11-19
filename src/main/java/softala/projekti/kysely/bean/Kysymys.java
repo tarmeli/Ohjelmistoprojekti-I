@@ -1,23 +1,25 @@
 package softala.projekti.kysely.bean;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import java.util.List;
 
 // tehdään Kysymys-luokasta JPA entity
 @Entity
 @Table(name = "kysymys")
 public class Kysymys {
     @Id
+    @Column(name = "kysymys_id")
     private int id;
 
-    @Column(name = "kysymys") // attribuutti eri nimellä tietokannassa
-    private String teksti;
-
+    private String data;
     private String tyyppi;
 
-    // esim. radio-buttonien ja checkboxien määrä
-    private int tyypin_maara;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "kysymys")
+    @JsonManagedReference
+    private List<Vaihtoehto> vaihtoehdot;
 
     // yhdistetään kysymykset kysely-tauluun
     @ManyToOne
@@ -25,12 +27,16 @@ public class Kysymys {
     @JsonBackReference
     private Kysely kysely;
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "kysymys")
+    @JsonManagedReference
+    private List<Vastaus> vastaukset;
 
-    public Kysymys(int id, String teksti, String tyyppi, int tyypin_maara) {
+
+    public Kysymys(int id, String data, String tyyppi, List<Vaihtoehto> vaihtoehdot) {
         this.id = id;
-        this.teksti = teksti;
+        this.data = data;
         this.tyyppi = tyyppi;
-        this.tyypin_maara = tyypin_maara;
+        this.vaihtoehdot = vaihtoehdot;
     }
 
     public Kysymys() {
@@ -52,12 +58,12 @@ public class Kysymys {
         this.tyyppi = tyyppi;
     }
 
-    public String getTeksti() {
-        return teksti;
+    public String getData() {
+        return data;
     }
 
-    public void setTeksti(String teksti) {
-        this.teksti = teksti;
+    public void setData(String data) {
+        this.data = data;
     }
 
     public Kysely getKysely() {
@@ -68,11 +74,19 @@ public class Kysymys {
         this.kysely = kysely;
     }
 
-    public int getTyypin_maara() {
-        return tyypin_maara;
+    public List<Vaihtoehto> getVaihtoehdot() {
+        return vaihtoehdot;
     }
 
-    public void setTyypin_maara(int tyypin_maara) {
-        this.tyypin_maara = tyypin_maara;
+    public void setVaihtoehdot(List<Vaihtoehto> vaihtoehdot) {
+        this.vaihtoehdot = vaihtoehdot;
+    }
+
+    public List<Vastaus> getVastaukset() {
+        return vastaukset;
+    }
+
+    public void setVastaukset(List<Vastaus> vastaukset) {
+        this.vastaukset = vastaukset;
     }
 }
