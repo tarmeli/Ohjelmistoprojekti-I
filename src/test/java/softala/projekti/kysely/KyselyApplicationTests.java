@@ -1,4 +1,5 @@
-/* package softala.projekti.kysely;
+/*
+package softala.projekti.kysely;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,9 +37,11 @@ public class KyselyApplicationTests {
 	}
 
 	@Test
-	public void contextLoads() {
+	public void contextLoads()
+        throws Exception{
 
 	}
 
 }
+
 */
