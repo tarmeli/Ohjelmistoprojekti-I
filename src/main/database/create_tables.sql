@@ -1,11 +1,11 @@
-CREATE TABLE user (
+/*CREATE TABLE user (
   u_id      INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   sukupuoli VARCHAR(10),
   koulu     VARCHAR(50),
   ikä       INTEGER
 )
   ENGINE = InnoDB
-  DEFAULT CHARSET = utf8;
+  DEFAULT CHARSET = utf8; */
 
 CREATE TABLE kysely (
   kysely_id INTEGER      NOT NULL PRIMARY KEY,
