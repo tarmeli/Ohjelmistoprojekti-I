@@ -1,6 +1,5 @@
 INSERT INTO kysely VALUES
-(1, 'Testikysely'),
-(2, 'Toinen kysely');
+(1, 'Testikysely');
 
 INSERT INTO kysymys VALUES
 (1, 1, 'Ikä', 'number'),
@@ -57,4 +56,24 @@ INSERT INTO vaihtoehdot(kysymys_id, data) VALUES
 (15, "En"),
 (16, " "); -- ei vaihtoehtoja
 
+INSERT INTO kysely VALUES
+(2, 'Toinen kysely');
 
+INSERT INTO kysymys VALUES
+(17, 2, 'Onko tämä toinen kysely?', 'number'),
+(18, 2, 'Toimiiko se?', 'radio'),
+(19, 2, 'Saisiko olla lisää kahvia?', 'range'),
+(20, 2, 'Mitä mieltä kysymyksistä?', 'select'),
+(21, 2, 'Tää vielä', 'textarea');
+
+INSERT INTO vaihtoehdot(kysymys_id, data) VALUES
+(17, 0),
+(18, 'Kyllä'),
+(18, 'Ei'),
+(19, '1'),
+(19, '5'),
+(19, '3'),
+(20, 'Huonoja ovat'),
+(20, 'Ihan ok'),
+(20, 'Tämä kysely on täydellinen'),
+(21, ' ');

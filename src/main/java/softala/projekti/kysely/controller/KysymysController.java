@@ -1,15 +1,13 @@
 package softala.projekti.kysely.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import softala.projekti.kysely.bean.Kysymys;
 import softala.projekti.kysely.repository.KysymysRepository;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping(path= "/kysymykset")
 public class KysymysController {

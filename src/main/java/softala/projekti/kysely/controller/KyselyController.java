@@ -7,6 +7,7 @@ import softala.projekti.kysely.repository.KyselyRepository;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping(path="/kyselyt")
 public class KyselyController {
