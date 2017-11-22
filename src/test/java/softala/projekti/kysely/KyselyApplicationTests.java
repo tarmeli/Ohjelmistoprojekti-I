@@ -1,56 +1,45 @@
 /*
 package softala.projekti.kysely;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
-import org.springframework.test.context.TestPropertySource;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder;
+import softala.projekti.kysely.bean.Kysely;
 import softala.projekti.kysely.controller.KyselyController;
-import softala.projekti.kysely.repository.KyselyRepository;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.test.web.client.match.MockRestRequestMatchers.content;
-import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
+import softala.projekti.kysely.controller.KysymysController;
+
+import java.util.List;
+
+import static java.util.Collections.singletonList;
+import static org.mockito.BDDMockito.given;
+
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(
-		webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT ,
-		classes = KyselyApplication.class
-)
-@AutoConfigureMockMvc
-@TestPropertySource(
-		locations = "classpath:application-integrationtest.properties"
-)
-
-//testit tulee tähän
-public class KyselyApplicationTests {
+@WebMvcTest(KyselyController.class)
+public class KyselyControllerTest {
 
     @Autowired
-    private MockMvc mockMvc;
+    private MockMvc mvc;
 
-    @Autowired
-    private KyselyRepository repository;
+    @MockBean
+    private KyselyController kyselyController;
 
-    @Autowired
-    private KyselyController controllerToTest;
-
-    @Before
-    public void setup() {
-        this.mockMvc = standaloneSetup(new KyselyApplication()).build();
-    }
+    @MockBean
+    private KysymysController kysymysController;
 
     @Test
-    public void kyselyTesti()
-            throws Exception {
+    public void getKysely() throws Exception {
+        Kysely kysely = new Kysely();
+        kysely.setId(1);
+        kysely.setNimi("testauskysely");
+        kysely.setKysymys();
 
+        List<Kysely> allKyselyt = singletonList(kysely);
 
     }
-
 }
 */
