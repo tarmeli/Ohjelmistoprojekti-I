@@ -10,8 +10,9 @@ import javax.persistence.*;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Vastaus {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "vastaus_id")
-    private int id;
+    private Long id;
 
     private String data;
 
@@ -20,19 +21,18 @@ public class Vastaus {
     @JsonBackReference
     private Kysymys kysymys;
 
-    public Vastaus(int id, String data) {
-        this.id = id;
+    public Vastaus(String data) {
         this.data = data;
     }
 
     public Vastaus() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
