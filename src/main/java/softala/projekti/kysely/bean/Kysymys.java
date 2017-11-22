@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.*;
 import java.util.List;
 
+import static javax.persistence.CascadeType.MERGE;
+import static javax.persistence.CascadeType.PERSIST;
+
 // tehdään Kysymys-luokasta JPA entity
 @Entity
 @Table(name = "kysymys")
@@ -27,7 +30,7 @@ public class Kysymys {
     @JsonBackReference
     private Kysely kysely;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "kysymys")
+    @OneToMany(cascade = {PERSIST, MERGE}, fetch = FetchType.LAZY, mappedBy = "kysymys")
     @JsonManagedReference
     private List<Vastaus> vastaukset;
 
@@ -89,4 +92,5 @@ public class Kysymys {
     public void setVastaukset(List<Vastaus> vastaukset) {
         this.vastaukset = vastaukset;
     }
+
 }

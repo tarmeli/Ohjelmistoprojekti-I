@@ -1,11 +1,13 @@
 package softala.projekti.kysely.bean;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "vastaukset")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Vastaus {
     @Id
     @Column(name = "vastaus_id")

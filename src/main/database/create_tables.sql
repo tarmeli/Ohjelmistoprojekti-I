@@ -33,7 +33,6 @@ CREATE TABLE vaihtoehdot (
 
 CREATE TABLE vastaukset (
   vastaus_id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  u_id       INTEGER NOT NULL REFERENCES user (u_id),
   kysymys_id INTEGER NOT NULL REFERENCES kysymys (kysymys_id),
   data       VARCHAR(100)
 )
