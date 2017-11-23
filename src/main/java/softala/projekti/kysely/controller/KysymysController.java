@@ -9,7 +9,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping(path= "/kysymykset")
+@RequestMapping(path= "/rest/kysymykset")
 public class KysymysController {
     @Autowired
     private KysymysRepository kysymysRepository;

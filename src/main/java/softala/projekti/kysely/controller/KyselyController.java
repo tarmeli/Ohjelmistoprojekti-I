@@ -9,7 +9,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping(path="/kyselyt")
+@RequestMapping(path="/rest/kyselyt")
 public class KyselyController {
 
     // repositoryn injektointi
