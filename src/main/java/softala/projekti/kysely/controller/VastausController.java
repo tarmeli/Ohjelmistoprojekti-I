@@ -28,9 +28,9 @@ public class VastausController {
 
     @RequestMapping(path = "/tallenna", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public void tallenna(@RequestBody List<Vastaus> vastaukset) {
-        int i = 1;
+        int i = 1; // muuttuja inkrementointia varten
         for (Vastaus vastaus : vastaukset) {
-            Kysymys kysymys = kysymysRepository.findOne(i);
+            Kysymys kysymys = kysymysRepository.findOne(i); // kysymys on tietokannassa FK, joten tarvitaan viittaus kysymykseen
             vastaus.setKysymys(kysymys);
             vastausRepository.save(vastaus);
             i++;
