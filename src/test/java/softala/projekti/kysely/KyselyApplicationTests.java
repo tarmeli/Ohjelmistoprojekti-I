@@ -1,45 +1,27 @@
-/*
 package softala.projekti.kysely;
 
+import static org.assertj.core.api.Java6Assertions.assertThat;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
 import softala.projekti.kysely.bean.Kysely;
-import softala.projekti.kysely.controller.KyselyController;
-import softala.projekti.kysely.controller.KysymysController;
-
-import java.util.List;
-
-import static java.util.Collections.singletonList;
-import static org.mockito.BDDMockito.given;
+import softala.projekti.kysely.repository.KyselyRepository;
 
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(KyselyController.class)
-public class KyselyControllerTest {
+@SpringBootTest
+public class KyselyApplicationTests {
 
     @Autowired
-    private MockMvc mvc;
-
-    @MockBean
-    private KyselyController kyselyController;
-
-    @MockBean
-    private KysymysController kysymysController;
+    private KyselyRepository kyselyRepository;
 
     @Test
-    public void getKysely() throws Exception {
+    public void getKyselynNimi() throws Exception {
         Kysely kysely = new Kysely();
-        kysely.setId(1);
-        kysely.setNimi("testauskysely");
-        kysely.setKysymys();
-
-        List<Kysely> allKyselyt = singletonList(kysely);
-
+        kysely.setNimi("Liikuntakysely");
+        String nimi = kyselyRepository.findOne(1).getNimi();
+        assertThat(kysely.getNimi().equals(nimi));
     }
 }
-*/
