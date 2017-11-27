@@ -12,7 +12,7 @@ public class KyselyApplication extends SpringBootServletInitializer{
 
         SpringApplication.run(KyselyApplication.class, args);
     }
-
+    //palvelin yhteensopivuus
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         return builder.sources(KyselyApplication.class);
