@@ -18,6 +18,7 @@ INSERT INTO kysymys VALUES
 (14, 1, 'Jos vastasit edelliseen kysymykseen kyllä, kerro omin sanoin mitä olet käyttänyt?', 'textarea'),
 (15, 1, 'Parantaisitko/lisäisitkö koulusi liikuntamahdollisuuksia?', 'radio'),
 (16, 1, 'Jos vastasit kyllä, kerro vielä omin sanoin miten ja miksi?', 'textarea');
+(17, 1, 'Valitse seuraavista kohdista yksi tai useampi, joka kuvaa kyselyä parhaiten', 'checkbox');
 
 INSERT INTO vaihtoehdot(kysymys_id, data) VALUES
 (1, 0), -- ei vaihtoehtoja
@@ -55,3 +56,7 @@ INSERT INTO vaihtoehdot(kysymys_id, data) VALUES
 (15, "Kyllä"),
 (15, "En"),
 (16, " "); -- ei vaihtoehtoja
+(17, "Kysymykset olivat selkeitä"),
+(17, "Vastaaminen kyselyyn oli vaivatonta"),
+(17, "Kyselyn ulkoasu oli miellyttävä"),
+(17, "Aihe oli ajankohtainen");
