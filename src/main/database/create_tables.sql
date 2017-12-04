@@ -34,7 +34,7 @@ CREATE TABLE vaihtoehdot (
 CREATE TABLE vastaukset (
   vastaus_id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   kysymys_id INTEGER NOT NULL REFERENCES kysymys (kysymys_id),
-  data       VARCHAR(100)
+  data       VARCHAR(200)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
