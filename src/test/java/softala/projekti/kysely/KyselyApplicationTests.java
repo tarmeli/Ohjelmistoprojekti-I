@@ -16,6 +16,7 @@ public class KyselyApplicationTests {
 
     @Autowired
     private KyselyRepository kyselyRepository;
+    
     //testaa nimen hakemista
     @Test
     public void getKyselynNimi() throws Exception {
